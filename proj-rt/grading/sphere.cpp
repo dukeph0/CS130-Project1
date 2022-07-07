@@ -4,7 +4,11 @@
 // Determine if the ray intersects with the sphere
 Hit Sphere::Intersection(const Ray& ray, int part) const
 {
-    TODO;
+    // TODO;
+    // vec3 iVector = ray.endpoint - center;
+    // double dotVector = dot(ray.direction, iVector);
+    // double 
+
     return {0,0,0};
 }
 
