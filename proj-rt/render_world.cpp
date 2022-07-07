@@ -22,7 +22,9 @@ Render_World::~Render_World()
 // to ensure that hit.dist>=small_t.
 Hit Render_World::Closest_Intersection(const Ray& ray)
 {
-    TODO;
+    //TODO;
+    // Set min_t to a large value
+    float min_t = INFINITY;
     return {};
 }
 
