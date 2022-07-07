@@ -24,8 +24,19 @@ Hit Render_World::Closest_Intersection(const Ray& ray)
 {
     //TODO;
     // Set min_t to a large value
-    float min_t = INFINITY;
-    return {};
+    float min_t = std::numeric_limits<float>::max();
+    Hit currHit;
+    Object* o;
+    Hit closest_hit = {0,0,0};
+    for(int i = 0; i < objects.size(); i++) {
+        // Use o->Intersect to get the closest hit w/ the object
+        Hit currHit = o->Intersection(ray, -1);
+        if(currHit.object && currHit.dist < min_t && currHit.dist >= small_t) { // if Hit is the closest and larger than small_t then
+            closest_hit = currHit; // store the hit as the closest hit
+            min_t = currHit.dist;
+        }
+    }
+    return {closest_hit};
 }
 
 // set up the initial view ray and call
